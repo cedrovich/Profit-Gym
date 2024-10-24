@@ -1,0 +1,172 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animate.css">
+    <link rel="stylesheet" href="fancybox.css">
+    <link rel="stylesheet" href="responsiveslides.css">
+    <script src="fancybox.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="responsiveslides.min.js"></script>
+    <script src="wow.min.js"></script>
+    <script src="https://kit.fontawesome.com/b971a45ca4.js" crossorigin="anonymous"></script>
+    <title>Gimnasio</title>
+</head>
+<body>
+    <header id="upup" class="ancho header">
+      <div class="logo" id="btnmenu">
+        <figure>
+          <img src="images/logo.png" alt="">
+        </figure>
+        <div class="bars">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </div>
+      <div id="menu">
+        <nav class="navbar">
+          <a href="">HOME</a>
+          <a href="#serv">SERVICES</a>
+          <a href="">GALLERY</a>
+          <a href="">COACHES</a>
+      </nav>
+    </div>
+    </header>
+    <section class="">
+        <!-- <img src="images/slide1.jpg" alt=""> -->
+        <div class="callbacks_container">
+          <div class="wow animate__animated animate__bounceInRight info-slide">
+            <h1>BEST FITNESS</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis ipsum ad aut non! Nobis expedita molestiae architecto voluptates ullam, </p>
+            <a class="btn" href="">JOIN NOW</a>
+          </div>
+            <ul class="rslides" id="slider4">
+              <li>
+                <img src="images/slide1.jpg" alt="">
+              </li>
+              <li>
+                <img src="images/slide2.jpg" alt="">
+              </li>
+              <li>
+                <img src="images/slide3.jpg" alt="">
+              </li>
+            </ul>
+          </div>
+    </section>
+    <section class="ancho serv">
+      <h1>SERVICES</h1>
+      <div class="articles-cont">
+        <article class="wow animate__animated animate__zoomIn">
+          <div>
+            <i class="fas fa-award"></i>
+          </div>
+          <h2>QUALITY SERVICE</h2>
+          <p>At our fitness studio, you can experience the best level of customer service.</p>
+        </article>
+        <article class="wow animate__animated animate__zoomIn">
+          <div>
+            <i class="fas fa-dumbbell"></i>
+          </div>
+          <h2>SPACIOUS GYM</h2>
+          <p>Our gym has enough place for all kinds of workouts and a Wide variety of equipment.</p>
+        </article>
+        <article class="wow animate__animated animate__zoomIn">
+          <div>
+            <i class="fas fa-file-invoice"></i>
+          </div>
+          <h2>UNIQUE FITNESS PROGRAMS</h2>
+          <p>Our coaches have developed more than 50 fitness programs and workouts for you.</p>
+        </article>
+        <article class="wow animate__animated animate__zoomIn">
+          <div>
+            <i class="fas fa-users"></i>
+          </div>
+          <h2>GROUP CLASSES</h2>
+          <p>If you prefer training with friends, then our group classes have what you need.</p>
+        </article>
+      </div>
+    </section>
+    <section class="galeria">
+      <div class=" cont-elements-gallery">
+        <div class="ab1">
+          <div class="cont-galeria-up">
+            <a href="images/foto1.jpg" data-fancybox="gallery" data-caption="Caption #1">
+              <img src="images/foto1.jpg" />
+            </a>
+            <a href="images/foto3.jpg" data-fancybox="gallery" data-caption="Caption #1">
+              <img src="images/foto3.jpg" />
+            </a>
+          </div>
+          <div class="cont-galeria-down">
+            <a href="images/foto4.jpg" data-fancybox="gallery" data-caption="Caption #1">
+              <img src="images/foto4.jpg" />
+            </a>
+            <a href="images/foto2.jpg" data-fancybox="gallery" data-caption="Caption #1">
+              <img src="images/foto2.jpg" />
+            </a>
+          </div>
+        </div>
+        <div class="text-cont wow animate__animated animate__bounceInLeft">
+          <h2>GALLERY <span>FITNESS</span> CLUB</h2>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae, hic. Ab eaque quisquam consequatur suscipit fugit ut nulla at magni asperiores, nostrum porro doloribus? Laudantium assumenda nostrum cum odio quo!</p>
+          <a class="btn btn2" href="">JOIN NOW</a>
+        </div>
+      </div>
+    </section>
+    <div class="line-up">
+      <hr class="line1">
+      <a id="back-to-top" href=""><i class="fa-solid fa-chevron-up"></i></a>
+    </div>
+    <hr class="line2">
+    <footer class="ancho footer">
+      <p>Edrick Leon</p>
+      <div class="social-media">
+        <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+        <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+        <a href=""><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </footer>
+
+    <script>
+$("#btnmenu").click(function() {
+            $("#menu").slideToggle();
+        });
+
+      new WOW().init();
+
+      Fancybox.bind('[data-fancybox="gallery"]', {
+      });
+    // Funcion para el ResponsiveSlides
+    $("#slider4").responsiveSlides({
+        auto: false,
+        pager: false,
+        nav: true,
+        speed: 500,
+        namespace: "callbacks",
+        before: function () {
+          $('.events').append("<li>before event fired.</li>");
+        },
+        after: function () {
+          $('.events').append("<li>after event fired.</li>");
+        }
+      });
+
+      $(document).ready(function() {
+    // Mostrar el botón cuando se hace scroll hacia abajo
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 1000) { // Mostrar si se baja 300px
+            $('#back-to-top').fadeIn();
+        } else {
+            $('#back-to-top').fadeOut();
+        }
+      });
+
+      // Funcionalidad para subir al inicio de la página
+      $('#back-to-top').click(function() {
+        $('html, body').animate({scrollTop: 0}, 800); // Subir suavemente en 800ms
+        return false;
+      });
+    });
+      </script>
+</body>
+</html>
