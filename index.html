@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="animate.css">
     <link rel="stylesheet" href="fancybox.css">
-    <link rel="stylesheet" href="responsiveslides.css">
+    <!-- <link rel="stylesheet" href="responsiveslides.css"> -->
     <script src="fancybox.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="responsiveslides.min.js"></script>
@@ -32,25 +32,16 @@
       </nav>
     </div>
     </header>
-    <section class="">
-        <!-- <img src="images/slide1.jpg" alt=""> -->
-        <div class="callbacks_container">
-          <div class="wow animate__animated animate__bounceInRight info-slide">
+    <section class="picslide">
+      <ul class="rslides">
+        <li><img src="images/slide1.jpg" alt=""></li>
+        <li><img src="images/slide2.jpg" alt=""></li>
+        <li><img src="images/slide3.jpg" alt=""></li>
+      </ul>
+          <div class="wow animate__animated animate__fadeIn animate__slow info-slide">
             <h1>BEST FITNESS</h1>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis ipsum ad aut non! Nobis expedita molestiae architecto voluptates ullam, </p>
             <a class="btn" href="">JOIN NOW</a>
-          </div>
-            <ul class="rslides" id="slider4">
-              <li>
-                <img src="images/slide1.jpg" alt="">
-              </li>
-              <li>
-                <img src="images/slide2.jpg" alt="">
-              </li>
-              <li>
-                <img src="images/slide3.jpg" alt="">
-              </li>
-            </ul>
           </div>
     </section>
     <section class="ancho serv">
@@ -136,20 +127,10 @@ $("#btnmenu").click(function() {
 
       Fancybox.bind('[data-fancybox="gallery"]', {
       });
-    // Funcion para el ResponsiveSlides
-    $("#slider4").responsiveSlides({
-        auto: false,
-        pager: false,
-        nav: true,
-        speed: 500,
-        namespace: "callbacks",
-        before: function () {
-          $('.events').append("<li>before event fired.</li>");
-        },
-        after: function () {
-          $('.events').append("<li>after event fired.</li>");
-        }
-      });
+
+      $(function() {
+    $(".rslides").responsiveSlides();
+  });
 
       $(document).ready(function() {
     // Mostrar el botón cuando se hace scroll hacia abajo
