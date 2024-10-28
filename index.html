@@ -117,37 +117,40 @@
         <a href=""><i class="fa-brands fa-youtube"></i></a>
       </div>
     </footer>
-
     <script>
-$("#btnmenu").click(function() {
-            $("#menu").slideToggle();
-        });
 
+    //Funcionalidad del boton menu
+      $("#btnmenu").click(function() {
+        $("#menu").slideToggle();
+      });
+
+    //Funcionalidad de la clase WOW
       new WOW().init();
 
+    //Funcionalidad del FancyBox
       Fancybox.bind('[data-fancybox="gallery"]', {
       });
 
+    //Funcionalidad del Slide
       $(function() {
-    $(".rslides").responsiveSlides();
-  });
+        $(".rslides").responsiveSlides();
+      });
 
+    //Funcionalidad del boton de subir
       $(document).ready(function() {
-    // Mostrar el botón cuando se hace scroll hacia abajo
       $(window).scroll(function() {
-        if ($(this).scrollTop() > 1000) { // Mostrar si se baja 300px
+        if ($(this).scrollTop() > 1000) {
             $('#back-to-top').fadeIn();
         } else {
             $('#back-to-top').fadeOut();
         }
       });
 
-      // Funcionalidad para subir al inicio de la página
       $('#back-to-top').click(function() {
-        $('html, body').animate({scrollTop: 0}, 800); // Subir suavemente en 800ms
+        $('html, body').animate({scrollTop: 0}, 400);
         return false;
       });
-    });
-      </script>
+      });
+    </script>
 </body>
 </html>
